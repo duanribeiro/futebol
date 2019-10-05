@@ -1,0 +1,498 @@
+.c-btn {
+    position: relative !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12) !important; 
+    transition: color 0.15s, background-color 0.15s, border-color 0.15s, box-shadow 0.15s !important;
+    cursor: pointer !important;
+    border: 1px solid transparent !important;
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    outline: none !important;
+    display: inline-block !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    line-height: 1.5 !important;
+    padding: 0.375rem 0.75rem !important;
+    border-radius: 6px;
+    &:focus {
+        outline: 0
+    }   
+}
+
+.c-rounded {
+    border-radius: 100px !important;
+}
+
+.no-border {
+    border: 0 !important !important;
+}
+
+.c-btn-round {
+    border-radius: 100px !important;
+}
+
+.c-primary {
+    color: #fff !important;
+    background-color: #3f6ad8 !important;
+    border-color: #3f6ad8 !important;
+    &:hover {
+        color: #fff !important;
+        background-color: #2955c8 !important;
+        border-color: #2651be !important;
+    }
+}
+
+.c-secondary {
+    color: #fff !important;
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+    &:hover {
+        color: #fff !important;
+        background-color: #5a6268 !important;
+        border-color: #545b62 !important;
+    }
+}
+
+.c-success {
+    color: #fff !important;
+    background-color: #00c486 !important;
+    border-color: #00c486 !important;
+    &:hover {
+        color: #fff !important;
+        background-color: #31a66a !important;
+        border-color: #2e9d64 !important;
+    }
+}
+
+.c-info {
+    color: #fff !important;
+    background-color: #00bcd4 !important;
+    border-color: #00bcd4 !important;
+    &:hover {
+        color: #fff !important;
+        background-color: #00aec5 !important;
+        border-color: #00aec5 !important;
+    }
+}
+
+.c-warning {
+    color: #212529 !important;
+    background-color: #f7b924 !important;
+    border-color: #f7b924 !important;
+    &:hover {
+        color: #212529 !important;
+        background-color: #eca909 !important;
+        border-color: #e0a008 !important;
+    }
+}
+
+.c-danger {
+    color: #fff !important;
+    background-color: #ff3279 !important;
+    border-color: #ff3279 !important;
+    &:hover {
+        color: #fff !important;
+        background-color: #ff3279 !important;
+        border-color: #ff3279 !important;
+    }
+}
+
+.c-focus {
+    color: #fff !important;
+    background-color: #444054 !important;
+    border-color: #444054 !important;
+    &:hover {
+        color: #fff !important;
+        background-color: #322f3e !important;
+        border-color: #2d2a37 !important;
+    }
+}
+
+.c-alternate {
+    color: #fff !important;
+    background-color: #794c8a !important;
+    border-color: #794c8a !important;
+    &:hover {
+        color: #212529 !important;
+        background-color: #dbdbdb !important;
+        border-color: #d5d5d5 !important;
+    }
+}
+
+.c-light {
+    color: #212529 !important;
+    background-color: #eeeeee !important;
+    border-color: #eeeeee !important;
+    &:hover {
+        color: #212529 !important;
+        background-color: #dbdbdb !important;
+        border-color: #d5d5d5 !important;
+    }
+}
+
+.c-dark {
+    color: #fff !important;
+    background-color: #343a40 !important;
+    border-color: #343a40 !important;
+    &:hover {
+        color: #fff !important;
+        background-color: #23272b !important;
+        border-color: #1d2124 !important;
+    }
+}
+
+.c-link {
+    font-weight: 400 !important;
+    color: #3f6ad8 !important;
+    background-color: transparent !important;
+    &:hover {
+        color: #0056b3 !important;
+        text-decoration: underline !important;
+        background-color: transparent !important;
+        border-color: transparent !important;
+    }
+}
+
+// outline
+
+.c-outline-primary {
+    color: #3f6ad8 !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: #3f6ad8 !important;
+    .lds-ring {
+        div {
+            border-color: #3f6ad8 transparent transparent transparent !important;
+        }
+    }
+    &:hover {
+        color: #fff !important;
+        background-color: #3f6ad8 !important;
+        border-color: #3f6ad8 !important;
+        .lds-ring {
+            div {
+                border-color: white transparent transparent transparent !important;
+            }
+        }
+    }
+}
+
+.c-outline-secondary {
+    color: #6c757d !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: #6c757d !important;
+    .lds-ring {
+        div {
+            border-color: #6c757d transparent transparent transparent !important;
+        }
+    }
+    &:hover {
+        color: #fff !important;
+        background-color: #6c757d !important;
+        border-color: #6c757d !important;
+        .lds-ring {
+            div {
+                border-color: white transparent transparent transparent !important;
+            }
+        }
+    }
+}
+
+.c-outline-success {
+    color: #00c486 !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: #00c486 !important;
+    .lds-ring {
+        div {
+            border-color: #00c486 transparent transparent transparent !important;
+        }
+    }
+    &:hover {
+        color: #fff !important;
+        background-color: #00c486 !important;
+        border-color: #00c486 !important;
+        .lds-ring {
+            div {
+                border-color: white transparent transparent transparent !important;
+            }
+        }
+    }
+}
+
+.c-outline-info {
+    color: #16aaff !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: #16aaff !important;
+    .lds-ring {
+        div {
+            border-color: #16aaff transparent transparent transparent !important;
+        }
+    }
+    &:hover {
+        color: #fff !important;
+        background-color: #00aec5 !important;
+        border-color: #00aec5 !important;
+        .lds-ring {
+            div {
+                border-color: white transparent transparent transparent !important;
+            }
+        }
+    }
+}
+
+.c-outline-warning {
+    color: #f7b924 !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: #f7b924 !important;
+    .lds-ring {
+        div {
+            border-color: #f7b924 transparent transparent transparent !important;
+        }
+    }
+    &:hover {
+        color: #212529 !important;
+        background-color: #f7b924 !important;
+        border-color: #f7b924 !important;
+        .lds-ring {
+            div {
+                border-color: white transparent transparent transparent !important;
+            }
+        }
+    }
+}
+
+.c-outline-danger {
+    color: #ff3279 !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: #ff3279 !important;
+    .lds-ring {
+        div {
+            border-color: #ff3279 transparent transparent transparent !important;
+        }
+    }
+    &:hover {
+        color: #fff !important;
+        background-color: #ff3279 !important;
+        border-color: #ff3279 !important;
+        .lds-ring {
+            div {
+                border-color: white transparent transparent transparent !important;
+            }
+        }
+    }
+}
+
+.c-outline-focus {
+    color: #444054 !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: #444054 !important;
+    .lds-ring {
+        div {
+            border-color: #444054 transparent transparent transparent !important;
+        }
+    }
+    &:hover {
+        color: #fff !important;
+        background-color: #444054 !important;
+        border-color: #444054 !important;
+        .lds-ring {
+            div {
+                border-color: white transparent transparent transparent !important;
+            }
+        }
+    }
+}
+
+.c-outline-alternate {
+    color: #794c8a !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: #794c8a !important;
+    .lds-ring {
+        div {
+            border-color: #794c8a transparent transparent transparent !important;
+        }
+    }
+    &:hover {
+        color: #fff !important;
+        background-color: #794c8a !important;
+        border-color: #794c8a !important;
+        .lds-ring {
+            div {
+                border-color: white transparent transparent transparent !important;
+            }
+        }
+    }
+}
+
+.c-outline-light {
+    color: #8f8f8f !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: #eeeeee !important;
+    .lds-ring {
+        div {
+            border-color: #8f8f8f transparent transparent transparent !important;
+        }
+    }
+    &:hover {
+        color: #212529 !important;
+        background-color: #eeeeee !important;
+        border-color: #eeeeee !important;
+        .lds-ring {
+            div {
+                border-color: #212529 transparent transparent transparent !important;
+            }
+        }
+    }
+}
+
+.c-outline-dark {
+    color: #343a40 !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: #343a40 !important;
+    .lds-ring {
+        div {
+            border-color: #343a40 transparent transparent transparent !important;
+        }
+    }
+    &:hover {
+        color: #fff !important;
+        background-color: #343a40 !important;
+        border-color: #343a40 !important;
+        .lds-ring {
+            div {
+                border-color: #fff transparent transparent transparent !important;
+            }
+        }
+    }
+}
+
+.c-outline-link {
+    border-color: transparent !important;
+    &:hover {
+        color: #3f6ad8 !important;
+        background: #f8f9fa !important;
+    }
+}
+
+// disable
+
+.c-btn.disabled, .c-btn:disabled {
+    opacity: 0.65 !important;
+    cursor: auto !important;
+}
+
+// sizing
+
+.c-btn-lg {
+    padding: 0.5rem 1rem !important;
+    font-size: 1.1rem !important;
+    line-height: 1.5 !important;
+}
+
+.c-btn-sm {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+}
+
+.c-btn-lg.c-btn-wide, .c-btn-group-lg > .c-btn-wide.c-btn {
+    padding: 0.5rem 2rem !important;
+    font-size: 1.1rem !important;
+    line-height: 1.5 !important;
+}
+
+// loader
+
+.expand-left {
+    padding-left: 40px !important;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all !important;
+}
+
+.expand-right {
+    padding-right: 40px !important;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all !important;
+}
+
+.expand-up {
+    padding-top: 30px !important;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all !important;
+}
+
+.expand-down {
+    padding-bottom: 30px !important;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all !important;  
+}
+
+.loder-down {
+    right: 41% !important;
+    bottom: 10px !important;
+}
+
+.loder-left {
+    left: 10px !important;
+    top: 0 !important;
+}
+
+.loder-right {
+    right: 14px !important;
+    top: 0 !important;
+}
+
+.loder-middle {
+    right: 41% !important;
+    top: 0 !important; 
+}
+
+.label-middle {
+    opacity: 0
+}
+
+.lds-ring {
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 8px;
+    height: 20px;
+    margin: 6px;
+    border: 2px solid #fff;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: white transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+//   dashed button
+
+.c-btn-dashed {
+    border-style: dashed !important;
+}

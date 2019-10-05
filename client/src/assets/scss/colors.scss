@@ -1,0 +1,32 @@
+$colors: ( 
+    label1: #77A361, 
+    label2: #CD6889, 
+    label3: #2F4F4F, 
+    label4: #104E8B, 
+    label5: #A020F0, 
+    label6: #FF8000, 
+    taskboardicons: #6c6689, 
+    success: #57c4a7,
+    whitelight: #FFF
+);
+@each $key,
+$value in $colors {
+	.#{$key} {
+		background: $value;
+		background-color: $value !important;
+		border-color: $value !important;
+	}
+	.#{$key}--text {
+		color: $value !important;
+	}
+	.#{$key}-c-hover {
+		&:hover {
+			color: $value !important;
+		}
+	}
+	.#{$key}-b-hover {
+		&:hover {
+			background-color: $value !important;
+		}
+	}
+}

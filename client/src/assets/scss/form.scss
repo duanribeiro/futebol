@@ -1,0 +1,234 @@
+.form-container {
+    box-shadow: 0 6px 6px -3px rgba(0,0,0,.2),0 10px 14px 1px rgba(0,0,0,.14),0 4px 18px 3px rgba(0,0,0,.12)!important;
+    border-radius: 6px;
+    background-color: white;
+    width: 320px;
+    margin: 6% auto;
+    .login-title {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 400;
+        letter-spacing: normal!important;
+        text-align: center;
+    }
+
+    .link-label {
+        font-weight: bold;
+        font-size: 14px;
+        margin-top: 10px;
+        cursor: pointer;
+        color: #673ab7;
+        &:hover {
+            text-decoration: underline
+        }
+    }
+
+    .login-icon {
+        padding: 16px 0;
+        text-align: center;
+    }
+
+    .form-button {
+        font-size: 18px;
+        text-transform: capitalize;
+        box-shadow: none!important;
+        width: 100%;
+        border-radius: 2px;
+        font-weight: 500;
+        background: #00c486;
+        color: white
+    }
+
+    .form-info-text {
+        color: #677484;
+        font-size: 15px;
+    }
+
+    .register-privacy-text {
+        font-size: 14px;
+    }
+
+    .lock-screen-profile {
+        padding-bottom: 0px;
+        img {
+            border-radius: 50%;
+        }
+    }
+}
+
+.react-form-input {
+    border-radius: 6px !important;
+    font-size: 14px !important;
+    border: 1px solid #ddd !important;
+    &:focus {
+        border: 1px solid #9a9a9a !important;
+        box-shadow: none !important;
+    }
+}
+
+.react-form-search-input {
+    font-size: 14px !important;
+    border: 1px solid #ddd !important;
+    &:focus {
+        border: 1px solid #9a9a9a !important;
+        box-shadow: none !important;
+    }
+}
+
+.static-control-input {
+    border-radius: 6px !important;
+    font-size: 14px !important;
+    // border: 1px solid #ddd !important;
+    &:focus {
+        outline: 0;
+        box-shadow: none !important;
+    } 
+}
+
+.form-button {
+    font-size: 18px;
+    text-transform: capitalize;
+    box-shadow: none!important;
+    width: 100%;
+    border-radius: 2px;
+    font-weight: 500;
+    background: #00c486;
+    color: white
+}
+
+.error-msg {
+    font-size: 12px;
+    color: red;
+    font-weight: 600;
+}
+
+.page-home-button {
+    color: #fff;
+    cursor: pointer;
+    padding: 20px 25px;
+    border-radius: 2px;
+    font-size: 14px;
+    border: 0;
+    float: right;
+    background-color: transparent;
+    &:hover {
+        background-color: rgba(0,0,0,.12);
+    }
+}
+
+.pricing-page {
+    .Pricing-title {
+        font-size: 45px;
+        line-height: 48px;
+        letter-spacing: normal;
+        color: #fff;
+        font-weight: 500;
+        margin: 48px 0;
+    }
+
+    .pricing-card {
+        max-width: 320px;
+        margin: 0 auto;
+        text-align: center;
+        color: white;
+        margin-bottom: 30px;
+        font-weight: 600;
+        box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+        .pink-highlight {
+            background-color: #f06292;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px 0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(240,98,146,.6);
+        }
+        .pricing-button {
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 2px;
+            border: 0;
+            color: white;
+            background-color: #6200ea;
+            cursor: pointer;
+            box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+        }
+        .trial-info {
+            color: #00bcd4!important;
+        }
+    }
+
+    .pricing-white-card {
+        max-width: 320px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        text-align: center;
+        color: black;
+        font-weight: 600;
+        background-color: #fff!important;
+        box-shadow: 0 10px 13px -6px rgba(0,0,0,.2),0 20px 31px 3px rgba(0,0,0,.14),0 8px 38px 7px rgba(0,0,0,.12)!important;
+        .pink-highlight {
+            color: white;
+            background-color: #f06292;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px 0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(240,98,146,.6);
+        }
+        .pricing-button {
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 2px;
+            border: 0;
+            color: white;
+            background-color: #6200ea;
+            cursor: pointer;
+            box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+        }
+        .trial-info {
+            color: #00bcd4!important;
+        }
+    }
+
+    .style-2-price-round-title-white {
+        background: white;
+        color: #6200ea;
+    }
+
+    .style-2-price-round-title {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .style-2-price-round-title-dark {
+        background: #6200ea;
+        color: white;
+    }
+
+    .faq-pricing {
+        color: white;
+        font-weight: 600;
+        .pricing-faq-card {
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+            border-radius: 2px;
+            color: rgba(0,0,0,.87);
+            margin-bottom: 30px;
+            .title {
+                font-size: 20px!important;
+                font-weight: 600;
+                line-height: 1!important;
+                letter-spacing: .02em!important;
+            }
+            .description {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+            }
+        }
+    }
+}

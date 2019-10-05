@@ -1,0 +1,91 @@
+.reactstrap-example-block {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.reactstrap-badge-button-block {
+    button {
+        margin: 0 10px 10px 0;
+    }
+}
+
+.reactstrap-button-block {
+    button {
+        margin: 0 10px 10px 0;
+    }
+}
+
+.reactstrap-badge-block {
+    .badge {
+        margin: 0 10px 10px 0;
+    }
+}
+
+.reactstrap-breadcrumb-block {
+    display: flex;
+    flex-flow: wrap;
+    .breadcrumb {
+        margin-right: 10px;
+    }
+}
+
+.reactstrap-splitbutton-drop-block {
+    .btn-group {
+        margin: 0 10px 10px 0;
+    }
+}
+
+.reactstrap-dropdown-block {
+    button {
+        margin: 0 10px 10px 0;
+    }
+}
+
+.button-toolbar-block {
+    .btn-group {
+        margin: 0 10px 10px 0;
+    }
+}
+
+.reactstrap-card-block {
+    .card {
+        max-width: 300px;
+        margin: 0 auto;
+        @media (max-width: 575.98px) {
+            max-width: 100%;
+        }
+    }
+}
+
+.card-alignment-block {
+    .card {
+        max-width: 600px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+}
+
+.list-group-block {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.reactstrap-media {
+    overflow: auto;
+    img {
+        width: 200px;
+    }
+
+    .media-body {
+        padding-left: 10px;
+    }
+    .media-list {
+        padding-left: 0;
+    }
+}
+
+.progress-block {
+    .progress {
+        margin-bottom: 10px;
+    }
+}

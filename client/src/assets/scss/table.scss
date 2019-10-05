@@ -1,0 +1,41 @@
+.react-action-class {
+    button {
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        height: 1.875rem;
+        font-size: .9375rem;
+        width: 1.875rem;
+        border-radius: 3px;
+        margin-right: 5px;
+        &:focus {
+            outline: 0!important;
+        }
+    }
+    .react-table-view-button {
+        color: #6bd098;
+        &:hover {
+          background-color: #6bd098;
+          color: white;  
+        }
+    }
+    .react-table-edit-button {
+        color: #fab526;
+        &:hover {
+            background-color: #fab526;
+            color: white;  
+          }
+    }
+    .react-table-delete-button {
+        color: #eb6532;
+        &:hover {
+            background-color: #eb6532;
+            color: white;  
+          }
+    }
+}
+
+.react-table-header-class {
+    padding: 14px 0 !important;
+    font-weight: 600; 
+}

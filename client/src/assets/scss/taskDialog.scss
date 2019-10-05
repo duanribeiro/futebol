@@ -1,0 +1,411 @@
+$iconColor: #42526e;
+
+.task-dialog {
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        max-width: 100% !important;
+        margin-left: 20px !important;
+        margin-right: 20px !important
+    }
+    .task-dialog-header {
+        display: flex;
+        @media (max-width: 575.98px) {
+            flex-direction: column-reverse;
+        }
+        .task-title {
+            font-size: 20px;
+            flex: 1;
+            color: $iconColor;
+        }
+        .icons {
+            @media (max-width: 575.98px) {
+                text-align: right;
+            }
+            i {
+                color: $iconColor;  
+                margin: 0 10px;
+                cursor: pointer;
+            }
+        }
+    }
+    .task-dialog-content {
+        background-color: #F4F5F7;
+        .close {
+            display: none;
+        }
+        .modal-body {
+            padding-top: 0;
+        }
+        .modal-header {
+            border-bottom: 0;
+            .modal-title {
+                width: 100%;
+            }
+        }
+    }
+
+    .task-description {
+        background: white;
+        padding: 15px;
+        border-radius: 7px;
+        cursor: pointer;
+    }
+
+    .task-attachment {
+        background-color: white;
+        padding: 10px;
+        border-radius: 6px;
+        margin-left: 10px;
+        margin-top: 10px;
+        max-width: 220px;
+        @media (max-width: 575.98px) {
+            margin-left: 0px;
+            max-width: 100%;
+        }
+        @media (min-width: 576px) and (max-width: 767.98px) { 
+            max-width: 100%;
+            margin-left: 0px;
+        }
+        .title {
+            font-size: 15px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .attachment-group {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            .attachment {
+                margin: 8px 8px 8px 0;
+                background: white;
+                padding: 15px;
+                border-radius: 7px;
+                position: relative;
+                background-color: rgba(9, 30, 66, 0.04);
+                margin: 5px auto;
+                .more_icon {
+                    i {
+                        text-align: right;
+                        position: absolute;
+                        top: 0px;
+                        right: 6px;
+                        cursor: pointer;
+                    }
+                }
+                .file-name {
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: #1d2b3b;
+                    text-align: center;
+                    margin-top: 8px;
+                }
+                img {
+                    width: 120px;
+                    height: 120px;
+                    object-fit: cover;
+                    border-radius: 7px;
+                }
+            }
+        }
+    }
+    .left-side {
+        flex: 1;
+    }
+    .dialog-flex {
+        display: flex;
+        @media (max-width: 575.98px) {
+            display: block;
+        }
+        @media (min-width: 576px) and (max-width: 767.98px) { 
+            display: block;
+        }
+    }
+    .sub-task {
+        background: white;
+        padding: 0 15px 15px;
+        border-radius: 6px;
+        .subtask-search {
+            font-size: 12px;
+            padding: 4px 10px;
+            color: $iconColor;
+            border-radius: 6px;
+            border: 1px solid rgba(9, 30, 66, 0.2);
+        }
+        .subtask-block-header {
+            display: flex;
+            align-items: center;
+            i {
+                cursor: pointer;
+                margin-left: 10px;
+                color: $iconColor; 
+            }
+        }
+        .title {
+            flex: 1;
+            font-size: 18px;
+            font-weight: 800;
+            padding: 15px 0;
+            @media (max-width: 575.98px) {
+                font-size: 14px;
+            }
+            i {
+                margin-right: 15px;
+            }
+        }
+
+        .subtask-detail {
+            background-color: rgba(9,30,66,.04);
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            .subtask-options {
+                display: flex;
+                align-items: center;
+                .comment-count {
+                    flex: 1;
+                    font-size: 12px;
+                    color: $iconColor;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+            i {
+                color: $iconColor;  
+                margin-left: 10px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            .sub-task-ticket {
+                background-color: #ff3279;
+                color: white;
+                padding: 2px 8px;
+                border-radius: 6px;
+                font-size: 12px;
+                font-weight: 800;
+            }
+
+            .comment-section {
+                padding-top: 10px;
+                .comment-detail {
+                    display: flex;
+                    margin-bottom: 10px;
+                    .profile {
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+                    }
+                    .users {
+                        padding-left: 10px;
+                        .user-name {
+                            font-size: 15px;
+                            font-weight: 600;
+                            color: $iconColor;
+                            .time {
+                                margin-left: 8px;
+                                font-size: 10px;
+                                font-weight: 300;
+                            }
+                        }
+                        .message {
+                            font-size: 12px;
+                            background-color: white;
+                            padding: 5px 10px;
+                            border-radius: 6px;
+                            margin-top: 5px;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .member-block {
+        background-color: white;
+        padding: 10px;
+        border-radius: 6px;
+        margin-left: 10px;
+        @media (max-width: 575.98px) {
+            margin-left: 0px;
+            margin-top: 10px;
+        }
+        @media (min-width: 576px) and (max-width: 767.98px) { 
+            margin-left: 0px;
+            margin-top: 10px;
+        }
+        .member {
+            margin: 5px;
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+
+        .all-member {
+            display: flex;
+            align-items: center;
+            max-width: 200px;
+            flex-wrap: wrap;
+            @media (max-width: 575.98px) {
+                max-width: 100%
+            }
+        }
+    }
+
+    .dialog-chip {
+        background-color: rgba(9,30,66,.04);
+        border-radius: 6px;
+        padding: 6px 12px;
+        margin-top: 10px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        max-width: 115px;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.add-task-block, .add-comment-block, .add-subtask-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    padding: 0 10px 10px;
+    color: #6b778c;
+    cursor: pointer;
+    i {
+        margin-right: 10px;
+    }
+}
+
+.add-subtask-block, .add-comment-block {
+    padding: 0 10px 0px;
+}
+
+.add-card-input-block, .add-comment-input-block {
+    text-align: center;
+    .add-card-input, .add-comment-input, .add-subtask-input {
+        width: 93%;
+        resize: none;
+        border-radius: 3px;
+        border: 0;
+        font-size: 16px;
+        padding: 8px;
+        &:focus {
+            outline: 0;
+        }
+    }
+
+    .add-comment-input, .add-subtask-input {
+        width: 100% !important;
+        margin-top: 10px;
+    }
+
+    .add-subtask-input {
+        background-color: rgba(9, 30, 66, 0.04);
+        margin-top: 0px;
+    }
+
+    .action, .comment-action, .subtask-action {
+        display: flex;
+        align-items: center;
+        margin-left: 8px;
+        margin-bottom: 10px;
+    }
+    
+    .comment-action, .subtask-action {
+        margin-left: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+.label-block {
+    background-color: white;
+    padding: 10px;
+    border-radius: 6px;
+    margin-left: 10px;
+    margin-top: 10px;
+    max-width: 220px;
+    @media (max-width: 575.98px) {
+        margin-left: 0px;
+        max-width: 100%;
+    }
+    @media (min-width: 576px) and (max-width: 767.98px) { 
+        max-width: 100%;
+        margin-left: 0px;
+    }
+    .heading {
+        font-size: 15px;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .all-labels {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .label {
+        padding: 8px 23px;
+        border-radius: 6px;
+        color: white;
+        font-size: 12px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.no-subtask-info {
+    text-align: center;
+    padding: 65px 0 80px;
+    font-size: 16px;
+    color: #42526e;
+    i {
+        font-size: 24px;
+        color: #00C584;
+    }
+}
+
+.description-input {
+    width: 100%;
+    // padding: 8px;
+    border: 0;
+    outline: 0;
+}
+
+.label-rect {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+}
+
+.label-list {
+    display: flex;
+    align-items: center;
+}
+
+.add-member-content {
+    max-height: 200px;
+    overflow: auto;
+}
+.add-member-list {
+    display: flex;
+    align-items: center;
+    .member-pics {
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+    }
+}

@@ -1,0 +1,108 @@
+.c-text-primary {
+    color: #3f6ad8;
+    &:hover {
+        color: #2955c8;
+    }
+}
+
+.c-text-secondary {
+    color: #6c757d;
+    &:hover {
+        color: #5a6268;
+    }
+}
+
+.c-text-success {
+    color: #3ac47d;
+    &:hover {
+        color: #2e9d64;
+    }
+}
+
+.c-text-info {
+    color: #16aaff;;
+    &:hover {
+        color: #0098ef;
+    }
+}
+
+.c-text-warning {
+    color: #f7b924;
+    &:hover {
+        color: #eca909;
+    }
+}
+
+.c-text-danger {
+    color: #d92550;
+    &:hover {
+        color: #d92550;
+    }
+}
+
+.c-text-focus {
+    color: #444054;
+    &:hover {
+        color: #322f3e;
+    }
+}
+
+.c-text-alternate {
+    color: #794c8a;
+}
+
+
+.c-text-dark {
+    color: #343a40;
+    &:hover {
+        color: #23272b;
+    }
+}
+
+.heading-title {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    color: #fff;
+    clear: both;
+}
+
+.display-info-class {
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.grey--text {
+    color: #757575;
+}
+
+.header-title {
+    color: #757575;
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    // margin: auto;
+}
+
+.display-5 {
+    font-size: 1.14rem;
+    font-weight: 300;
+}
+
+.display-6 {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.subheading {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.body-2 {
+    font-size: 14px;
+    font-weight: 500;
+}
