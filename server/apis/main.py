@@ -7,6 +7,7 @@ db = MongoDevConnection()
 
 @mainpage.route('/healthcheck', methods=['GET'])
 def healthcheck():
+
     return jsonify({
         "message": "Success"
     }), 200
