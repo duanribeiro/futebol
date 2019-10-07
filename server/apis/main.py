@@ -7,6 +7,10 @@ db = MongoDevConnection()
 
 @mainpage.route('/healthcheck', methods=['GET'])
 def healthcheck():
+    from models.model import db
+    from models.model import PostProcessing
+
+    pass
 
     return jsonify({
         "message": "Success"
