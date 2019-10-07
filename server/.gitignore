@@ -2,6 +2,8 @@
 # Created by https://www.gitignore.io/api/git,flask,python,pycharm+all,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=git,flask,python,pycharm+all,visualstudiocode
 
+
+.env
 ### Flask ###
 instance/*
 !instance/.gitignore
