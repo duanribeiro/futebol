@@ -5,9 +5,9 @@ The main objective of this project is to use technology and data science in the 
 
 This project consists of 3 services:
 
-* __Client:__ Made in React and is responsible for data presentation.
-* __Server:__ Made Python, using Flask microframework for API'S part
-* __Crawler:__ Made in Python using Scrapy framework for web scraping.
+* __Client:__ Made in __React__ and is responsible for data presentation.
+* __Server:__ Made in Python, using __Flask__ microframework for API'S part
+* __Crawler:__ Made in Python, using __Scrapy__ framework for web scraping.
 
 And also we got 2 kind of databases:
 * __No-SQL:__ MongoDB
