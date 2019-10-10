@@ -12,3 +12,25 @@ This project consists of 3 services:
 And also we got 2 kind of databases:
 * __No-SQL:__ MongoDB, hosted on Atlas Cloud.
 * __SQL:__ PostgreSQL, hosted on Google Cloud.
+
+
+## 1) Starting Server
+
+```
+cd server
+export USER="<azure_devops_user>"
+export PASSWORD="<azure_devops_password>"
+
+pip install -r requirements.txt
+python3 run.py
+```
+
+
+## 2) Starting Client
+
+```
+cd client
+
+npm install
+npm start
+```
