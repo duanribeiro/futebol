@@ -11,4 +11,4 @@ This project consists of 3 services:
 
 And also we got 2 kind of databases:
 * __No-SQL:__ MongoDB, hosted on Atlas Cloud.
-* __SQL:__ PostgreSQL, hosted on Google CLoud
+* __SQL:__ PostgreSQL, hosted on Google Cloud.
