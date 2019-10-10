@@ -14,12 +14,22 @@ And also we got 2 kind of databases:
 * __SQL:__ PostgreSQL, hosted on Google Cloud.
 
 
+
 ## 1) Starting Server
 
 ```
 cd server
-export USER="<azure_devops_user>"
-export PASSWORD="<azure_devops_password>"
+
+export MONGO_USER=example
+export MONGO_PASS=example
+export MONGO_HOST=example
+export MONGO_DB=example
+
+export PG_USER=example
+export PG_PASS=example
+export PG_HOST=example
+export PG_PORT=example
+export PG_DB=example
 
 pip install -r requirements.txt
 python3 run.py
