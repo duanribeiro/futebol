@@ -1,17 +1,20 @@
 import pandas as pd
-import pymongo
 from datetime import datetime, timedelta, date
-from pprint import pprint
-import json
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from crawler.env import PG_USER, PG_PASS, PG_HOST, PG_PORT, PG_DB
 
-# Variáveis do MongoDB
-myclient = pymongo.MongoClient("mongodb+srv://duanribeiro:BJ183r32@futebol-iwbwh.mongodb.net/test?retryWrites=true&w=majority")
-db = myclient["futebol"]
-collection = db["rank_brazilian_league"]
+
+engine = create_engine(f'postgres://{PG_USER}:{PG_PASS}@{PG_HOST}:{PG_PORT}/{PG_DB}')
+conn = engine.connect()
+Session = sessionmaker(bind=engine)
+session = Session()
 
 # Process
 rounds = {}
 teams = {}
+last_year = session.query(brazilian_league).all()
+
 last_year = list(db.brazilian_league.find({}, {"_id":0, "date":1}).sort("date",-1).limit(1))[0]['date'].year
 for year in range(2014, last_year):
     print(f' ANO: {year}')
@@ -59,4 +62,5 @@ for team in teams.keys():
     teams[team]['name'] = team
     collection.insert_one(teams[team])
 print(f'FIM!')
+
 
