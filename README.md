@@ -13,6 +13,8 @@ And also we got 2 kind of databases:
 * __No-SQL:__ MongoDB, hosted on Atlas Cloud.
 * __SQL:__ PostgreSQL, hosted on Google Cloud.
 
+![Imagem Exemplo](screenshot_1.png)
+
 
 
 ## 1) Starting Server
