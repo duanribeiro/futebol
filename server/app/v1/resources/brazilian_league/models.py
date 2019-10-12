@@ -8,9 +8,6 @@ from datetime import datetime
 
 class BrazilianLeague:
 
-    def __init__(self):
-        pass
-
     @staticmethod
     def last_12_games():
         query = mongo.db.brazilian_league.find({},
@@ -29,3 +26,18 @@ class BrazilianLeague:
                 final_object
             )
         )
+
+    @staticmethod
+    def brazilian_league_graph():
+        query = mongo.db.rank_brazilian_league.aggregate([
+            {'$project':
+                 { '_id':0,'name': 1, 'points':'$2016.points'}
+             }
+        ])
+
+        return json.loads(
+            dumps(
+                query
+            )
+        )
+

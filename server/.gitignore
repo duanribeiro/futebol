@@ -7,7 +7,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+.idea
 # C extensions
 *.so
 
@@ -140,3 +140,4 @@ dmypy.json
 .scannerwork/
 
 # End of https://www.gitignore.io/api/python,visualstudiocode
+/.idea/

@@ -14,3 +14,14 @@ class League(Resource):
         """
         return BrazilianLeague.last_12_games()
 
+
+@api.route('/brazilian_league_graph')
+class RankLeague(Resource):
+
+    def get(self):
+        """
+        Get brazilian league graph
+        """
+        return BrazilianLeague.brazilian_league_graph()
+
+

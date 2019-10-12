@@ -26,9 +26,9 @@ const Intro = () => {
     
     // ComponentDidMount()
     const fetchGames = () => {
-        axios.get(`${process.env.REACT_APP_BACKEND_API}`)
+        axios.get(`${process.env.REACT_APP_BACKEND_API}/brazilian_league/last_12_games`)
         .then(response => {
-            setGames(response.data['data'])
+            setGames(response.data)
         })
         .catch(error => {
             console.error(error.message);
@@ -37,14 +37,14 @@ const Intro = () => {
     useEffect( () => { fetchGames() }, [] )
 
     const fetchTopPlayes = () => {
-        axios.get(`${process.env.REACT_APP_BACKEND_API}/top_players`)
+        axios.get(`${process.env.REACT_APP_BACKEND_API}/players/top`)
         .then(response => {
-            setTopPlayers(response.data['data'])
+            setTopPlayers(response.data)
         })
         .catch(error => {
             console.error(error.message);
         })
-    }
+    }   
     useEffect( () => { fetchTopPlayes() }, [] )
 
         return (

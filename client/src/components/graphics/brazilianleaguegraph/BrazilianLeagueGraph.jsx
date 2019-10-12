@@ -8,9 +8,10 @@ const BrazilianLeagueGraph = () => {
     const [graphs, setGraphs ] = useState([])
 
     const fetchGraph = () => {
-        axios.get(`${process.env.REACT_APP_BACKEND_API}/brazilian_league_graph`)
+        axios.get(`${process.env.REACT_APP_BACKEND_API}/brazilian_league/brazilian_league_graph`)
         .then(response => {
-            setGraphs(response.data['data'])
+            console.log(response.data  )
+            setGraphs(response.data)
         })
         .catch(error => {
             console.error(error.message);
