@@ -20,5 +20,8 @@ api = Api(v1_blueprint,
           authorizations=authorizations)
 
 from .resources.brazilian_league.brazilian_league import api as brazilian_league
+from .resources.players.players import api as players
 
 api.add_namespace(brazilian_league)
+api.add_namespace(players)
+

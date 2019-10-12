@@ -4,8 +4,7 @@ from .models import BrazilianLeague
 
 api = Namespace('brazilian_league', 'Brazilian League Endpoints')
 
-
-@api.route('/')
+@api.route('/last_12_games')
 class League(Resource):
 
     @api.marshal_list_with(brazilian_league)
@@ -14,6 +13,4 @@ class League(Resource):
         Get last 12 games
         """
         return BrazilianLeague.last_12_games()
-
-
 
