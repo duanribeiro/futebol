@@ -9,8 +9,7 @@ This project consists of 3 services:
 * __Server:__ Made in Python, using __Flask__ microframework for API's.
 * __Crawler:__ Made in Python, using __Scrapy__ framework for web scraping.
 
-And also we got 2 kind of databases:
-* __No-SQL:__ MongoDB, hosted on Atlas Cloud.
+And also the database:
 * __SQL:__ PostgreSQL, hosted on Google Cloud.
 
 ![Imagem Exemplo](screenshot_2.png)
