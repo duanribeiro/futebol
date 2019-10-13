@@ -1,7 +1,7 @@
 # Futebol
 [![Python](https://img.shields.io/badge/python-3.7-blue.svg)]() [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat)](/LICENSE)
 
-The main objective of this project is to use technology and data science in the Brazilian Football Championship. You can check the current work on https://trello.com/b/hIgiJDFl/futebol
+The main objective of this project is to use technology and data science in the Brazilian Football Championship. You can check the current work on https://trello.com/b/hIgiJDFl/futebol.
 
 This project consists of 3 services:
 
