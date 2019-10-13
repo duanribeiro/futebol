@@ -10,7 +10,7 @@ This project consists of 3 services:
 * __Crawler:__ Made in Python, using __Scrapy__ framework for web scraping.
 
 And also the database:
-* __SQL:__ PostgreSQL, hosted on Google Cloud.
+* __NO-SQL:__ MongoDB, hosted on Atlas using a EC2 instance on AWS.
 
 ![Imagem Exemplo](screenshot_2.png)
 
@@ -20,17 +20,7 @@ And also the database:
 
 ```
 cd server
-
-export MONGO_USER=example
-export MONGO_PASS=example
-export MONGO_HOST=example
-export MONGO_DB=example
-
-export PG_USER=example
-export PG_PASS=example
-export PG_HOST=example
-export PG_PORT=example
-export PG_DB=example
+export MONGO_URI=mongodb://[username:password@]host1[:port1][,...hostN[:portN]][/[database][?options]]
 
 pip install -r requirements.txt
 python3 run.py
