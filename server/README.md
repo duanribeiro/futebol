@@ -17,7 +17,7 @@ flask-app
 
 ## Swagger
 
-After the application goes up, open your browser on `localhost:5000/api/v1/docs` to see the self-documented interactive API:
+After the application goes up, open your browser on `localhost:5000/api/v1/docs` to see the self-documented interactive API.
 
 ![](/imgs/swagger.png)
 
