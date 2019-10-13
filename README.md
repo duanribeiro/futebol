@@ -7,10 +7,10 @@ This project consists of 3 services:
 
 * __Client:__ Made in __React__ and is responsible for data presentation.
 * __Server:__ Made in Python, using __Flask__ microframework for API's.
-* __Crawler:__ Made in Python, using __Scrapy__ framework for web scraping.
+* __Crawler:__ Made in Python, using __Scrapy__ asynchronous framework for web scraping.
 
 And also the database:
-* __NO-SQL:__ MongoDB, hosted on Atlas using a EC2 instance on AWS.
+* __No-SQL:__ MongoDB, hosted on Atlas using a EC2 instance on AWS.
 
 ![Imagem Exemplo](screenshot_2.png)
 
