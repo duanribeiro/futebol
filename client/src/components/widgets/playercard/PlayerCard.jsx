@@ -9,11 +9,12 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import PlayerStatsGraph from './../../graphics/playerstats/PlayerStatsGraph'
-
+import {team_images} from './../../../helper/team_images'
 
 const useStyles = makeStyles(theme => ({
     card: {
-        maxWidth: 345,
+        width: "100%",
+        height: 500,
       },
     media: {
       height: 140,
@@ -26,8 +27,9 @@ const useStyles = makeStyles(theme => ({
     }
   }))
 
+
 const PlayerCard = (
-    {name='', position='', nationality='', age='', team='', market_value=''}
+    {name='', position='', nationality='', age='', team='', market_value='', stats = ''}
     ) => {
 
     const classes = useStyles();
@@ -37,8 +39,7 @@ const PlayerCard = (
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="https://static-wp-tor15-prd.torcedores.com/wp-content/uploads/2018/07/Not%C3%ADcias-do-Palmeiras.jpg"
-          title="Contemplative Reptile"
+          image={team_images[team]}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
@@ -51,12 +52,14 @@ const PlayerCard = (
             {team}<br/>
             R$ {market_value} milhões<br/>
           </Typography>
-            <PlayerStatsGraph/>
-
+          <div style={{marginLeft: "10px"}}>
+            <PlayerStatsGraph
+            stats={stats}
+            />  {/* Gráfico das estatísticas do jogador */}
+          </div>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        {/* Gráfico das estatísticas do jogador */}
       </CardActions>
     </Card>
     )

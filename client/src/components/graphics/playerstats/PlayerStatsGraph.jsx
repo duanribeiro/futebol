@@ -6,7 +6,7 @@ import HighchartsMore from "highcharts/highcharts-more";
 
 HighchartsMore(Highcharts);
 
-const PlayerStatsGraph = () => {
+const PlayerStatsGraph = props => {
     const options = {
         navigation: {
             buttonOptions: {
@@ -29,8 +29,8 @@ const PlayerStatsGraph = () => {
         },
     
         xAxis: {
-            categories: ['Ataque', 'Drible', 'Passe', 'Controle de Bola',
-                'Físico', 'Velocidade'],
+            categories: ['Velocidade', 'Drible', 'Passe', 'Visão de Jogo',
+                'Marcação', 'Chute'],
             tickmarkPlacement: 'on',
             lineWidth: 0
         },
@@ -43,13 +43,13 @@ const PlayerStatsGraph = () => {
     
         tooltip: {
             shared: true,
-            pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
         },
     
     
         series: [{
             name: '',
-            data: [43000, 19000, 60000, 35000, 17000, 10000],
+            data: [props.stats['Velocidade'], props.stats['Drible'], props.stats['Passe'],
+            props.stats['Visão de Jogo'], props.stats['Marcação'], props.stats['Chute']],
             pointPlacement: 'on',
             showInLegend: false
         }],
@@ -59,7 +59,7 @@ const PlayerStatsGraph = () => {
         <HighchartsReact
         highcharts={Highcharts}
         constructorType={"chart"}
-        containerProps={{ style: { height: "200px" , width: "200px"} }}
+        containerProps={{ style: { height: "200px" , width: "230px"} }}
         options={options}
         />
     )

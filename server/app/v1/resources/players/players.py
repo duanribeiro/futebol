@@ -7,7 +7,6 @@ api = Namespace('players', 'Players Endpoints')
 @api.route('/top')
 class TopPlayers(Resource):
 
-    @api.marshal_list_with(players)
     def get(self):
         """
         Get top 12 market value players

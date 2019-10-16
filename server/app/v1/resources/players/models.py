@@ -16,7 +16,7 @@ class Players:
         query = mongo.db.players.find({},
                              {'_id': 0, 'name':1, 'position':1,
                               'nationality':1, 'age':1, 'team':1,
-                              'market_value': 1}
+                              'market_value': 1, 'stats': 1}
                              ).sort('market_value', -1).limit(12)
 
 

@@ -10,7 +10,6 @@ const BrazilianLeagueGraph = () => {
     const fetchGraph = () => {
         axios.get(`${process.env.REACT_APP_BACKEND_API}/brazilian_league/brazilian_league_graph`)
         .then(response => {
-            console.log(response.data  )
             setGraphs(response.data)
         })
         .catch(error => {

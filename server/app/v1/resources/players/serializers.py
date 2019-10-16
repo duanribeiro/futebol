@@ -8,5 +8,5 @@ players = api.model('Players', {
     'nationality': fields.String(description='Player nationality'),
     'age': fields.Integer(required=True, description='Player age'),
     'team': fields.String(required=True, description='Player Team'),
-    'market_value': fields.Float(description='Player market value'),
+    'market_value': fields.Float(description='Player market value')
 })

@@ -18,7 +18,7 @@ class BrazilianLeague:
 
         final_object = []
         for result in query:
-            result['date'] = datetime.strftime(result['date'], '%d/%m/%Y %H:%m')
+            result['date'] = datetime.strftime(result['date'], '%d/%m/%Y')
             final_object.append(result)
 
         return json.loads(

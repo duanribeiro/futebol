@@ -1,90 +1,10 @@
-.sidebar{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 260px;
-    display: block;
-    z-index: 3;
-    color: #fff;
-    font-weight: 200;
-    background-size: cover;
-    overflow-x: hidden;
-    background-position: center center;
-
-    .sidebar-wrapper{
-        position: relative;
-        height: calc(100vh - 75px);
-        z-index: 4;
-        padding-bottom: 30px;
-    }
-
-    .nav{
-        // margin-top: 20px;
-        li{
-            width: 100%;
-            .card
-                {
-                    .card-body {
-                        a {
-                            color: #FFFFFF;
-                            border-radius: 4px;
-                            margin: 5px 10px 0;
-                        }
-                    }
-                }
-            > a{
-                color: #FFFFFF;
-                border-radius: 4px;
-                margin: 5px 10px 0;
-            }
-        }
-        .caret{
-            top: 24px;
-            position: absolute;
-            right: 15px;
-        }
-
-        .span-shortname{
-            font-size: 12px;
-            float: left;
-            margin-right: 15px;
-            line-height: 30px;
-            width: 30px;
-            text-align: center;
-        }
-
-        i{
-            font-size: 18px;
-            float: left;
-            margin-right: 15px;
-            line-height: 30px;
-            width: 30px;
-            text-align: center;
-        }
-    }
-}
-
 .sidebar,
-body > .navbar-collapse{
-    &:after,
-    &:before{
-        display: block;
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: 2;
-    }
-}
 
 .main-panel{
     background: rgba(203,203,210,.15);
     position: relative;
     float: right;
-    width: calc(100% - 260px);
+    width: 100%;
     height: 100vh;
     @media (max-width: 767.98px) {
         width: 100% !important

@@ -45,11 +45,13 @@ const Intro = () => {
             console.error(error.message);
         })
     }   
+    console.log(topPlayers)
     useEffect( () => { fetchTopPlayes() }, [] )
-
         return (
             <>          
-               <h3>Campeonato Brasileiro</h3>
+                <div style={{textAlign: "center"}}>
+                    <h3>Últimos Jogos</h3>
+                </div>
                <br/>
                <AliceCarousel
                 mouseDragEnabled
@@ -60,9 +62,10 @@ const Intro = () => {
                 responsive={responsive}
                 dotsDisabled 
                 >
-                {games.map((game,key) => (
+                {games.map((game, key) => (
                    <GameCard
-                   key
+                   key={key}
+                   date={game['date']}
                    stadium={game['stadium']}
                    team_1={game['team_1']}
                    team_2={game['team_2']}
@@ -79,7 +82,9 @@ const Intro = () => {
                 <br/>
 
 
-                <h3>Jogadores mais caros</h3>
+                <div style={{textAlign: "center"}}>
+                    <h3>Jogadores Mais Caros</h3>
+                </div>
                <br/>
                <AliceCarousel
                 mouseDragEnabled
@@ -99,6 +104,7 @@ const Intro = () => {
                    age={player['age']}
                    team={player['team']}
                    market_value={player['market_value']}
+                   stats={player['stats']}
                    />
 
                 ))}

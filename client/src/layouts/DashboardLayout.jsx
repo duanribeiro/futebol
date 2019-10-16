@@ -32,107 +32,31 @@ const DashboardLayout = props => {
     const mainPanel = useRef(null);
     const scrollbars = useRef(null);
 
-    useMemo(() => {
-        if (scrollbars && scrollbars.current) {
-            scrollbars.current.scrollToTop(0);
-        }
-    }, [props.location]);
 
-    // Aqui muda a inicialização da barra do ladinho.
-    useMemo(() => {
-        setMini(props.themeSetting.sidebarMiniValue == "off");
-    }, [props.themeSetting.sidebarMiniValue]);
-
-    let routeScrollHeight;
+    let routeScrollHeight;  
 
     const { layoutTheme, locale, themeSetting } = props;
     const currentAppLocale = AppLocale[locale];
 
-    let routeArrowIcon = {
-        backgroundColor: props.sidebarTheme.backgroundColor,
-        color: props.sidebarTheme.textColor,
-        borderBottomLeftRadius: 0,
-        borderTopLeftRadius: 0,
-        position: "fixed",
-        zIndex: 1,
-        fontSize: "18px",
-        padding: "4px 5px"
-    };
-
-    if (
-        themeSetting.toolbarDisplayValue === "hide" &&
-        themeSetting.footerDisplayValue === "hide"
-    ) {
-        routeScrollHeight = {
-            height: "calc(100vh - 0px)"
-        };
-    } else if (themeSetting.toolbarDisplayValue === "hide") {
-        routeScrollHeight = {
-            height: "calc(100vh - 0px)"
-        };
-    } else if (themeSetting.footerDisplayValue === "hide") {
-        routeScrollHeight = {
-            height: "calc(100vh - 0px)"
-        };
-    } else {
-        routeScrollHeight = {
-            height: "calc(100vh - 0px)"
-        };
-    }
-
-    const mainPanelWidth = {
-        width: mini
-            ? `calc(100% - ${miniDrawerWidth})`
-            : `calc(100% - ${drawerWidth})`,
-        backgroundColor: layoutTheme.backgroundColor
-    };
-
     const drawerMiniMethod = () => {
         if (mini) {
-            setMini(false);
+            setMini(true);
         } else {
             setMini(true);
         }
     };
 
-    const mouseEnter = () => {
-        if (mini) {
-            setStateminiDrawerWidth(drawerWidth);
-        }
-    };
 
-    const mouseLeave = () => {
-        if (mini) {
-            setStateminiDrawerWidth(miniDrawerWidth);
-        }
-    };
-
-    const closeDrawer = () => {
-        setMini(true);
-    };
     return (
         <IntlProvider
             locale={currentAppLocale.locale}
             messages={currentAppLocale.messages}
         >
             <GlobalWrapper {...props}>
-                <Sidebar
-                    mini={mini}
-                    drawerWidth={statedrawerWidth}
-                    miniDrawerWidth={stateminiDrawerWidth}
-                    onMouseEnter={mouseEnter}
-                    onMouseLeave={mouseLeave}
-                    closeDrawer={() => closeDrawer}
-                    {...props}
-                />
-
                 <div
                     id="main-panel"
                     className="main-panel"
-                    ref={mainPanel}
-                    style={mainPanelWidth}
                 >
-                    {props.themeSetting.toolbarDisplayValue === "show" && (
                         <Header
                             drawerMiniMethod={() => drawerMiniMethod}
                             mini={mini}
@@ -140,17 +64,6 @@ const DashboardLayout = props => {
                             miniDrawerWidth={stateminiDrawerWidth}
                             {...props}
                         />
-                    )}
-
-                    {themeSetting.toolbarDisplayValue !== "show" && (
-                        <button
-                            style={routeArrowIcon}
-                            className="c-btn mini-drawer-menu-icon-hide-topbar"
-                            onClick={drawerMiniMethod}
-                        >
-                            <i className="fas fa-bars" />
-                        </button>
-                    )}
 
                     <Scrollbars style={routeScrollHeight} ref={scrollbars}>
                         {/* Route Layout Start*/}
