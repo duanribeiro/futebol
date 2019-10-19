@@ -98,6 +98,7 @@ const DashboardLayout = props => {
                         </div>
                         {/* Route Layout Finish*/}
                     </Scrollbars>
+                
                 </div>
             </GlobalWrapper>
         </IntlProvider>

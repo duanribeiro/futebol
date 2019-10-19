@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from scrapy.utils.response import open_in_browser
-from config import MongoDevConnection
+from mongo_connection import db
 import requests
-
-db = MongoDevConnection()
 
 euro_value = requests.get('https://economia.awesomeapi.com.br/all/EUR-BRL')
 euro_value = float(euro_value.content.decode().split('"high":')[1].split('"')[1].replace(',','.'))
@@ -14,8 +12,8 @@ class TransfermakertBrazilSpider(scrapy.Spider):
 
     def start_requests(self):
         for page in range(1, 4):
-            url = f'https://www.transfermarkt.com.br/campeonato-brasileiro-serie-a/marktwerte/wettbewerb/BRA1/ajax/yw1/page/{page}?ajax=yw1'
 
+            url = f'https://www.transfermarkt.com.br/campeonato-brasileiro-serie-a/marktwerte/wettbewerb/BRA1/ajax/yw1/page/{page}?ajax=yw1'
 
             yield scrapy.http.Request(url=url,
                                       method='GET',

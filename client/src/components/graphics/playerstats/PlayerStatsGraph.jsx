@@ -25,20 +25,20 @@ const PlayerStatsGraph = props => {
         },
     
         pane: {
-            size: '100px'
+            size: '100px',
         },
     
         xAxis: {
             categories: ['Velocidade', 'Drible', 'Passe', 'Visão de Jogo',
                 'Marcação', 'Chute'],
             tickmarkPlacement: 'on',
-            lineWidth: 0
+            lineWidth: 1,
         },
     
         yAxis: {
             gridLineInterpolation: 'polygon',
             lineWidth: 0,
-            min: 0
+            min: 0,
         },
     
         tooltip: {
@@ -51,7 +51,8 @@ const PlayerStatsGraph = props => {
             data: [props.stats['Velocidade'], props.stats['Drible'], props.stats['Passe'],
             props.stats['Visão de Jogo'], props.stats['Marcação'], props.stats['Chute']],
             pointPlacement: 'on',
-            showInLegend: false
+            showInLegend: false,
+            lineWidth: 1,
         }],
         }
 
