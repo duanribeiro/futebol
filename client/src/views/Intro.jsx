@@ -6,6 +6,8 @@ import PlayerCard from './../components/widgets/playercard/PlayerCard'
 import axios from 'axios'
 import AliceCarousel from 'react-alice-carousel'
 import "react-alice-carousel/lib/alice-carousel.css"
+import WinningProbability from './../components/widgets/winningprobability/WinningProbability'
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(() => ({
     "last_games": {
@@ -18,7 +20,11 @@ const useStyles = makeStyles(() => ({
     },
     "top_players": {
         textAlign: "center",
-        paddingBottom: "15px"
+        paddingBottom: "15px",
+    },
+    "winning_prob": {
+        textAlign: "center",
+        marginTop: "55px",
     },
   }))
 
@@ -27,6 +33,8 @@ const Intro = () => {
     const classes = useStyles();
     const [games, setGames ] = useState([])
     const [topPlayers, setTopPlayers ] = useState([])
+    const [winningProbability, setWinningProbability ] = useState([])
+
     const responsive = {
         0: { items: 1 },
         500: { items: 2 },
@@ -34,7 +42,7 @@ const Intro = () => {
         1024: { items: 5 },
       }
     
-    // Axios
+    // Axios+
     const fetchGames = () => {
         axios.get(`${process.env.REACT_APP_BACKEND_API}/brazilian_league/last_12_games`)
         .then(response => {
@@ -55,9 +63,20 @@ const Intro = () => {
         })
     }   
 
+    const fetchWinningProbability = () => {
+        axios.get(`${process.env.REACT_APP_BACKEND_API}/brazilian_league/winning_probability`)
+        .then(response => {
+            setWinningProbability(response.data)
+        })
+        .catch(error => {
+            console.error(error.message)
+        })
+    }  
+
     // ComponentDidMount()
     useEffect( () => { fetchTopPlayes() }, [] )
     useEffect( () => { fetchGames() }, [] )
+    useEffect( () => { fetchWinningProbability() }, [] )
 
 
     return (
@@ -119,6 +138,30 @@ const Intro = () => {
 
                 ))}
                 </AliceCarousel>
+            </div>
+
+            <div className={classes.winning_prob}>
+                <h3>Probabilidade de Vitória na Próxima Partida</h3>
+            </div>
+
+            <div>
+                <Grid
+                container
+                direction="row"
+                justify="center"
+                alignItems="center"
+                >
+                    {winningProbability.map((data, key) => (
+                    <WinningProbability
+                    key={key}
+                    team={data['team']}
+                    p1={data['p1']}
+                    pe={data['pe']}
+                    p2={data['p2']}
+                />
+                ))}
+            </Grid>
+             
             </div>
         
             <div style = {{marginBottom: "125px"}}/>
