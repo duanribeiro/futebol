@@ -12,7 +12,7 @@ This project consists of 3 services:
 And also the database:
 * __No-SQL:__ MongoDB, hosted on Atlas using a EC2 instance on AWS.
 
-![Imagem Exemplo](screenshot2/screenshot_20_10_19.png)
+![Imagem Exemplo](screenshots/screenshot_20_10_19.png)
 
 
 
