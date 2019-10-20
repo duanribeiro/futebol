@@ -31,7 +31,7 @@ class BrazilianLeague:
     def brazilian_league_graph():
         query = mongo.db.rank_brazilian_league.aggregate([
             {'$project':
-                 { '_id':0,'name': 1, 'points':'$2016.points'}
+                 { '_id':0,'name': 1, 'points':'$2019.points'}
              }
         ])
 

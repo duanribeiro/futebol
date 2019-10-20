@@ -3,17 +3,13 @@ import pymongo
 from datetime import datetime, timedelta, date
 from pprint import pprint
 import json
-
-# Variáveis do MongoDB
-myclient = pymongo.MongoClient("mongodb+srv://duanribeiro:BJ183r32@futebol-iwbwh.mongodb.net/test?retryWrites=true&w=majority")
-db = myclient["futebol"]
-collection = db["rank_brazilian_league"]
+from crawler.mongo_connection import db
 
 # Process
 rounds = {}
 teams = {}
 last_year = list(db.brazilian_league.find({}, {"_id":0, "date":1}).sort("date",-1).limit(1))[0]['date'].year
-for year in range(2014, last_year):
+for year in range(2014, last_year + 1):
     print(f' ANO: {year}')
     anual_games = list(db.brazilian_league.aggregate([
         {"$match": {
@@ -25,6 +21,9 @@ for year in range(2014, last_year):
         }},
         {"$sort": {"round": 1}}
     ]))
+
+    if not anual_games:
+        continue
 
     # Jogos separados por rodadas
     df = pd.DataFrame(anual_games)
@@ -57,6 +56,6 @@ for year in range(2014, last_year):
 
 for team in teams.keys():
     teams[team]['name'] = team
-    collection.insert_one(teams[team])
+    db.rank_brazilian_league.insert_one(teams[team])
 print(f'FIM!')
 

@@ -1,7 +1,11 @@
  export const team_images = {
     "América-MG": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Am%C3%A9rica-MG.png",
     "Atlético-MG": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Atl%C3%A9tico-MG.png",
+    "Atlético Mineiro": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Atl%C3%A9tico-MG.png",
+    "CSA": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/CSA.png",
     "Atlético-PR": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Atl%C3%A9tico-PR.png",
+    "Atlético-PR": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Atl%C3%A9tico-PR.png",
+    "Athletico Paranaense": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Atl%C3%A9tico-PR.png",
     "Bahia": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Bahia.png",
     "Botafogo": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Botafogo.png",
     "Chapecoense": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Chapecoense.png",
@@ -10,6 +14,7 @@
     "Flamengo": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Flamengo.png",
     "Fluminense": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Fluminense.png",
     "Grêmio": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Gr%C3%AAmio.png",
+    "Goiás": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Goi%C3%A1s.png",
     "Internacional": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Internacional.png",
     "Palmeiras": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Palmeiras.png",
     "Parana_Clube": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Parana_Clube.png",
@@ -17,6 +22,7 @@
     "Sport": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Sport.png",
     "São Paulo": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/S%C3%A3o+Paulo.png",
     "Vasco": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Vasco.png",
+    "Vasco da Gama": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Vasco.png",
     "Vitória": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Vit%C3%B3ria.png",
 
     "Club de Regatas Vasco da Gama": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Vasco.png",
@@ -35,5 +41,9 @@
     "Ponte Preta": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Ponte+Preta.png",
     "Coritiba": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Coritiba.png",
     "Avaí": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Ava%C3%AD.png",
-    "Atlético-GO": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Atl%C3%A9tico-GO.png"
+    "Atlético-GO": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Atl%C3%A9tico-GO.png",
+    "Fortaleza": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Fortaleza.png",
+    "Ceará": "https://futebol-120387120312.s3.us-east-2.amazonaws.com/teams/Cear%C3%A1.png"
+
+
 }

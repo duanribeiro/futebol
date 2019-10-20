@@ -74,7 +74,7 @@ const BrazilianLeagueGraph = () => {
             },
         },
         yAxis: {
-            tickInterval: 5,
+            tickInterval: 3,
             title: {
                 text: 'Pontos Acumulados'
             },
