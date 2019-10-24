@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime
 
 # Conectar ao Servidor
-myclient = pymongo.MongoClient("mongodb+srv://duanribeiro:BJ183r32@futebol-iwbwh.mongodb.net/test?retryWrites=true&w=majority")
+myclient = pymongo.MongoClient()
 
 # Utilizar o banco de dados dentro do servidor
 db = myclient["futebol"]
