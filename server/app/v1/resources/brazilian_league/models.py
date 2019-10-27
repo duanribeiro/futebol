@@ -41,3 +41,15 @@ class BrazilianLeague:
             )
         )
 
+    @staticmethod
+    def next_5_games():
+        query = mongo.db.brazilian_league.find({"score_team_1": "-"}, {"_id": 0, "team_1": 1}).sort("date", 1).limit(5)
+
+        return json.loads(
+            dumps(
+                query
+            )
+        )
+
+
+

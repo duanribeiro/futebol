@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => ({
         marginBottom: "10px"
     },
     "brazilian_league_graph": {
-        paddingTop: "25px",
+        paddingTop: "5px",
         paddingBottom: "15px"
     },
     "top_players": {
@@ -24,7 +24,7 @@ const useStyles = makeStyles(() => ({
     },
     "winning_prob": {
         textAlign: "center",
-        marginTop: "55px",
+        marginTop: "20px",
     },
   }))
 
@@ -81,9 +81,7 @@ const Intro = () => {
 
     return (
         <>          
-            <div className={classes.last_games}>
-                <h3>Últimos Jogos</h3>
-            </div>
+        <div>
             <AliceCarousel
             mouseDragEnabled
             buttonsDisabled
@@ -105,11 +103,40 @@ const Intro = () => {
                 />
 
             ))}
+            
             </AliceCarousel>
+            </div>
+            
+            <div className={classes.winning_prob}>
+                <h3>Probabilidade de Vitória na Próxima Partida</h3>
+            </div>
+
+            <div>
+                <Grid
+                container
+                direction="row"
+                justify="center"
+                alignItems="center"
+                >
+                    {winningProbability.map((data, key) => (
+                    <WinningProbability
+                    key={key}
+                    team={data['team']}
+                    p1={data['p1']}
+                    pe={data['pe']}
+                    p2={data['p2']}
+                />
+                ))}
+            </Grid>
+             
+            </div>
+        
+            <div style = {{marginBottom: "15px"}}/>
 
             <div className={classes.brazilian_league_graph}>
                 <BrazilianLeagueGraph/>
             </div>
+            
 
             <div className={classes.top_players}>
                 <h3>Jogadores Mais Caros</h3>
@@ -140,31 +167,7 @@ const Intro = () => {
                 </AliceCarousel>
             </div>
 
-            <div className={classes.winning_prob}>
-                <h3>Probabilidade de Vitória na Próxima Partida</h3>
-            </div>
-
-            <div>
-                <Grid
-                container
-                direction="row"
-                justify="center"
-                alignItems="center"
-                >
-                    {winningProbability.map((data, key) => (
-                    <WinningProbability
-                    key={key}
-                    team={data['team']}
-                    p1={data['p1']}
-                    pe={data['pe']}
-                    p2={data['p2']}
-                />
-                ))}
-            </Grid>
-             
-            </div>
-        
-            <div style = {{marginBottom: "125px"}}/>
+            
         </>
     )
 }

@@ -38,12 +38,14 @@ class WinningProbability(Resource):
         Get team winning probability of next games
         """
         final_output = []
-        for team in ['Chapecoense', 'Athletico Paranaense', 'Bahia', 'Botafogo']:
 
-            p1, pe, p2 = probability(team)
+
+        for result in BrazilianLeague.next_5_games():
+
+            p1, pe, p2 = probability(result['team_1'])
 
             final_output.append({
-                'team': team,
+                'team': result['team_1'],
                 'p1' : p1,
                 'pe': pe,
                 'p2': p2,
