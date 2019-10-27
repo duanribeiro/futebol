@@ -19,7 +19,7 @@ const HeaderWrapper = styled.div`
             display: flex !important;
             justify-content: center;
             @media  only screen and (max-width: 575.98px) {
-                width: 32px;
+                width: 50px;
                 height: 50px;
                 padding: 6px;
                 margin-top: 2px;

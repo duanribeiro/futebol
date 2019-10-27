@@ -1,13 +1,9 @@
 import pymongo
 import pandas as pd
 from datetime import datetime
+from app import mongo
 
-# Conectar ao Servidor
-myclient = pymongo.MongoClient()
-
-# Utilizar o banco de dados dentro do servidor
-db = myclient["futebol"]
-data = db.brazilian_league.find({'date': {'$gte': datetime(2019, 1, 1)}})
+data = mongo.db.brazilian_league.find({'date': {'$gte': datetime(2019, 1, 1)}})
 df = pd.DataFrame(data=data)
 
 # Criando Função de Probabilidade do Jogo
