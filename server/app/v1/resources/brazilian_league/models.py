@@ -10,7 +10,7 @@ class BrazilianLeague:
 
     @staticmethod
     def last_12_games():
-        query = mongo.db.brazilian_league.find({},
+        query = mongo.db.brazilian_league.find({"score_team_1": {"$ne": "-"}},
                              {'_id': 0, 'stadium':1, 'team_1':1,
                               'team_2':1, 'score_team_1':1, 'score_team_2':1,
                               'date': 1}

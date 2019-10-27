@@ -10,7 +10,7 @@ api = Namespace('brazilian_league', 'Brazilian League Endpoints')
 @api.route('/last_12_games')
 class League(Resource):
 
-    @api.marshal_list_with(brazilian_league)
+    # @api.marshal_list_with(brazilian_league)
     def get(self):
         """
         Get last 12 games

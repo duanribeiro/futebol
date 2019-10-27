@@ -7,12 +7,12 @@ import requests
 euro_value = requests.get('https://economia.awesomeapi.com.br/all/EUR-BRL')
 euro_value = float(euro_value.content.decode().split('"high":')[1].split('"')[1].replace(',','.'))
 
+# TODO -> PRECISA VERIFICAR OS DADOS ANTES DE SALVAR PARA NÃO DUPLICAR
 class TransfermakertBrazilSpider(scrapy.Spider):
-    name = 'transfermakert_brazil'
+    name = 'transfermarket_brazil'
 
     def start_requests(self):
         for page in range(1, 4):
-
             url = f'https://www.transfermarkt.com.br/campeonato-brasileiro-serie-a/marktwerte/wettbewerb/BRA1/ajax/yw1/page/{page}?ajax=yw1'
 
             yield scrapy.http.Request(url=url,

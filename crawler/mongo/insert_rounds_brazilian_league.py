@@ -6,10 +6,12 @@ games_without_round = list(
 )
 
 i = 0
-round = 23
+round = 32
 for game in games_without_round:
     if i == 10:
         i = 0
         round -= 1
-    db.brazilian_league.update({"_id":ObjectId(game['_id'])}, {"$set": {"round": round}})
+    db.brazilian_league.update_one({"_id": ObjectId(game['_id'])}, {"$set": {"round": round}})
     i += 1
+
+print("Fim")
