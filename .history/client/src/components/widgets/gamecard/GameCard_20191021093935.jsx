@@ -29,7 +29,7 @@ const useStyles = makeStyles(() => ({
     },
     "stadium": {
         textAlign: "center",
-        fontSize: "15px",
+        fontSize: "20px",
     },
   }))
 
