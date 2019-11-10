@@ -1,4 +1,6 @@
 import pymongo
 
-client = pymongo.MongoClient("mongodb+srv://duanribeiro:BJ183r32@futebol-iwbwh.mongodb.net/test?retryWrites=true&w=majority")
-db = client["futebol"]
+client = pymongo.MongoClient('mongodb+srv://write_user:write_pass@futebol-iwbwh.mongodb.net/futebol&authSource=admin')
+
+# db = client["futebol"]
+db = client["playground"]

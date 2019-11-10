@@ -8,7 +8,7 @@ from crawler.mongo_connection import db
 # Process
 rounds = {}
 teams = {}
-last_year = list(db.brazilian_league.find({}, {"_id":0, "date":1}).sort("date",-1).limit(1))[0]['date'].year
+last_year = list(db.brazilian_league.find({}, {"_id": 0, "date": 1}).sort("date", -1).limit(1))[0]['date'].year
 for year in range(2014, last_year + 1):
     print(f' ANO: {year}')
     anual_games = list(db.brazilian_league.aggregate([

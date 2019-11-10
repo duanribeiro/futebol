@@ -9,8 +9,8 @@ resource "google_container_cluster" "gcp_kubernetes" {
   ]
 
   master_auth {
-    username = "duanribeiro"
-    password = "mudar123"
+    username = "${var.linux_admin_username}"
+    password = "${var.linux_admin_password}}"
   }
 
   node_config {

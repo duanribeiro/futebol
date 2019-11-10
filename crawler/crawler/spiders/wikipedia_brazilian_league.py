@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from mongo_connection import db
-from scrapy.utils.response import open_in_browser
 from datetime import datetime
-import pandas as pd
 
 def convert_date(string_date):
     brazilian_months = {
@@ -103,17 +101,32 @@ class WikipediaBrazilianLeagueSecondPhase(scrapy.Spider):
 
             # Caso não exista placar, vamos pular
             if basic_info[2].css('b').get() == '<b>–</b>':
-                continue
+                score_team_1 = '-'
+                score_team_2 = '-'
+            else:
+                score_team_1 = int(basic_info[2].css('b').get().split(' – ')[0][-1])
+                score_team_2 = int(basic_info[2].css('b').get().split(' – ')[1][0])
 
-            date = convert_date(string_date=basic_info[0].css('a').attrib['title'])
-            team_1 =  basic_info[1].css('a').get().split('>')[1].split('<')[0]
-            team_2 =  basic_info[3].css('a')[1].get().split('>')[1].split('<')[0]
-            score_team_1 = int(basic_info[2].css('b').get().split(' – ')[0][-1])
-            score_team_2 = int(basic_info[2].css('b').get().split(' – ')[1][0])
+            try:
+                date = convert_date(string_date=basic_info[0].css('a').attrib['title'])
+            except:
+                date = '-'
+
+            try:
+                stadium = basic_info[4].css('a').attrib['title'].split('Estádio ')[-1]
+            except:
+                stadium = '-'
+
+            team_1 = basic_info[1].css('a').get().split('>')[1].split('<')[0]
+            team_2 = basic_info[3].css('a')[1].get().split('>')[1].split('<')[0]
+
 
             # Verificando o que já existe no banco de dados
-            if db.brazilian_league.find_one({"team_1": team_1, "team_2": team_2, "date": date}):
+            game = db.brazilian_league.find_one({"team_1": team_1, "team_2": team_2, "date": date})
+            if game and game['score_team_1'] != '-':
                 continue
+            elif game and game['score_team_1'] == '-':
+                db.brazilian_league.remove({'_id': game['_id']})
 
             if score_team_1 > score_team_2:
                 winner = team_1
@@ -123,7 +136,7 @@ class WikipediaBrazilianLeagueSecondPhase(scrapy.Spider):
                 winner = '-'
 
             process = {
-                "stadium": basic_info[4].css('a').attrib['title'].split('Estádio ')[-1],
+                "stadium": stadium,
                 "state_team_1": basic_info[1].css('img').attrib['alt'],
                 "state_team_2": basic_info[3].css('img').attrib['alt'],
                 "team_1": team_1,
@@ -137,5 +150,4 @@ class WikipediaBrazilianLeagueSecondPhase(scrapy.Spider):
 
         # Inserindo no banco de dados
         db.brazilian_league.insert_many(final_result)
-
 

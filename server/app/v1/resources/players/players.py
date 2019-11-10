@@ -14,3 +14,15 @@ class TopPlayers(Resource):
         return Players.top_players()
 
 
+@api.route('/cartola_fc')
+class CartolaFc(Resource):
+
+    def get(self):
+        """
+        Get values from scout_cartola_fc database
+        """
+
+
+
+        return Players.cartola_fc()
+

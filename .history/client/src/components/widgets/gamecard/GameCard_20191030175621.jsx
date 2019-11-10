@@ -25,11 +25,11 @@ const useStyles = makeStyles(() => ({
     },
     "score": {
         marginLeft: "17px",
-        fontSize: "30px",
+        fontSize: "15px",
     },
     "stadium": {
         textAlign: "center",
-        fontSize: "15px",
+        fontSize: "20px",
     },
   }))
 

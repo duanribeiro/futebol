@@ -32,6 +32,7 @@
     "react-custom-scrollbars": "^4.2.1",
     "react-datepicker": "^2.1.0",
     "react-dom": "^16.9.0",
+    "react-github-corners": "^0.2.1",
     "react-google-charts": "^3.0.15",
     "react-intl": "^2.8.0",
     "react-ratings-declarative": "^3.4.1",

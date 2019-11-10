@@ -40,8 +40,6 @@ const Intro = () => {
         500: { items: 2 },
         900: { items: 4 },
         1024: { items: 5 },
-        1400: { items: 6 },
-
       }
     
     // Axios+

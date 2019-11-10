@@ -24,4 +24,12 @@ class Players:
             dumps(query)
         )
 
+    @staticmethod
+    def cartola_fc():
+        query = mongo.db.scout_cartola_fc.find({}, {"_id": 0}).limit(5).sort("price", -1)
+
+        return json.loads(
+            dumps(query)
+        )
+
 

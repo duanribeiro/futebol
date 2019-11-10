@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from pprint import pprint
 # Variáveis do MongoDB
 
-myclient = pymongo.MongoClient("mongodb+srv://duanribeiro:BJ183r32@futebol-iwbwh.mongodb.net/test?retryWrites=true&w=majority")
+myclient = pymongo.MongoClient()
 mydb = myclient["futebol"]
 mycollection = mydb["brazilian_league"]
 

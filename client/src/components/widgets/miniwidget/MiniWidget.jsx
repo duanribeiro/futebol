@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import MiniWidgetWrapper from './miniwidget.style';
 
-export  const MiniWidget = (
+const MiniWidget = (
     {iconName, iconColor, background = '#ffffff', headline='', subheader='', rightIcon = false, className , dark= false}
     ) =>{
     return (

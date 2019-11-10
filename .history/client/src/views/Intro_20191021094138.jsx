@@ -6,7 +6,7 @@ import PlayerCard from './../components/widgets/playercard/PlayerCard'
 import axios from 'axios'
 import AliceCarousel from 'react-alice-carousel'
 import "react-alice-carousel/lib/alice-carousel.css"
-import WinningProbability from './../components/widgets/winningprobability/WinningProbability'
+// import WinningProbability from './../components/widgets/winningprobability/WinningProbability'
 import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(() => ({
@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => ({
         marginBottom: "10px"
     },
     "brazilian_league_graph": {
-        paddingTop: "5px",
+        paddingTop: "25px",
         paddingBottom: "15px"
     },
     "top_players": {
@@ -24,7 +24,7 @@ const useStyles = makeStyles(() => ({
     },
     "winning_prob": {
         textAlign: "center",
-        marginTop: "20px",
+        marginTop: "55px",
     },
   }))
 
@@ -40,8 +40,6 @@ const Intro = () => {
         500: { items: 2 },
         900: { items: 4 },
         1024: { items: 5 },
-        1400: { items: 6 },
-
       }
     
     // Axios+
@@ -83,7 +81,9 @@ const Intro = () => {
 
     return (
         <>          
-        <div>
+            <div className={classes.last_games}>
+                <h3>Últimos Jogos</h3>
+            </div>
             <AliceCarousel
             mouseDragEnabled
             buttonsDisabled
@@ -105,40 +105,11 @@ const Intro = () => {
                 />
 
             ))}
-
             </AliceCarousel>
-            </div>
-
-            <div className={classes.winning_prob}>
-                <h3>Probabilidade de Vitória na Próxima Partida</h3>
-            </div>
-
-            <div>
-                <Grid
-                container
-                direction="row"
-                justify="center"
-                alignItems="center"
-                >
-                    {winningProbability.map((data, key) => (
-                    <WinningProbability
-                    key={key}
-                    team={data['team']}
-                    p1={data['p1']}
-                    pe={data['pe']}
-                    p2={data['p2']}
-                />
-                ))}
-            </Grid>
-
-            </div>
-
-            <div style = {{marginBottom: "15px"}}/>
 
             <div className={classes.brazilian_league_graph}>
                 <BrazilianLeagueGraph/>
             </div>
-
 
             <div className={classes.top_players}>
                 <h3>Jogadores Mais Caros</h3>
@@ -169,8 +140,31 @@ const Intro = () => {
                 </AliceCarousel>
             </div>
 
-                    <div style={{paddingTop: "100px"}}/>
+            {/* <div className={classes.winning_prob}>
+                <h3>Probabilidade de Vitória na Próxima Partida</h3>
+            </div>
 
+            <div>
+                <Grid
+                container
+                direction="row"
+                justify="center"
+                alignItems="center"
+                >
+                    {winningProbability.map((data, key) => (
+                    <WinningProbability
+                    key={key}
+                    team={data['team']}
+                    p1={data['p1']}
+                    pe={data['pe']}
+                    p2={data['p2']}
+                />
+                ))}
+            </Grid>
+             
+            </div> */}
+        
+            <div style = {{marginBottom: "125px"}}/>
         </>
     )
 }
