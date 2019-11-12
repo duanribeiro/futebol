@@ -2,7 +2,7 @@
 import scrapy
 import json
 import pandas as pd
-#from mongo_connection import db
+from mongo_connection import db
 #from datetime import datetime
 #from scrapy.utils.response import open_in_browser
 
@@ -38,7 +38,7 @@ class sofa_scoure(scrapy.Spider):
 
         yield scrapy.http.Request(url=url_attack,
                                   method='GET',
-                                  callback=self.parse)
+                                  callback=self.parse_attack)
 
         yield scrapy.http.Request(url=url_deffence,
                                   method='GET',
@@ -52,7 +52,7 @@ class sofa_scoure(scrapy.Spider):
 
 
 
-    def parse(self, response):
+    def parse_attack(self, response):
 
 
         for i in range(len(json.loads(response.body_as_unicode())['results'])):
@@ -73,11 +73,15 @@ class sofa_scoure(scrapy.Spider):
         if sofa_scoure.num < 8:
 
             sofa_scoure.num += 1
-            yield response.follow(next_page, callback=self.parse)
+            yield response.follow(next_page, callback=self.parse_attack)
 
         else:
-            #db.statistic_players.insert_many(sofa_scoure.estatistic_data)
+
             data_attack = pd.DataFrame(sofa_scoure.estatistic_data_attack)
+            data_deffence = pd.DataFrame(sofa_scoure.estatistic_data_deffence)
+            data_passing = pd.DataFrame(sofa_scoure.estatistic_data_passing)
+            data = pd.concat([data_attack, data_deffence, data_passing], axis=1)
+            #db.statistic_players.insert_many(data)
 
 
 
