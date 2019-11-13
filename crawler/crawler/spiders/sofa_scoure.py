@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import json
-import pandas as pd
-from mongo_connection import db
-#from datetime import datetime
-#from scrapy.utils.response import open_in_browser
+#import pandas as pd
+from collections import defaultdict
+#from mongo_connection import db
+
 
 
 
@@ -17,6 +17,7 @@ class sofa_scoure(scrapy.Spider):
     estatistic_data_attack = []
     estatistic_data_deffence = []
     estatistic_data_passing = []
+    estatistic_data_goalkeeper = []
 
 
 
@@ -34,6 +35,10 @@ class sofa_scoure(scrapy.Spider):
                       'assists%2CaccuratePasses%2CaccuratePassesPercentage%2CkeyPasses%2Crating&group=passing&accumulation=total&' \
                       'order=-rating&offset=0&limit=100&_=1573590527'
 
+        url_goalkeeper = 'https://www.sofascore.com/api/v1/unique-tournament/325/season/22931/statistics?filters=position.in.G&fields=saves%2C' \
+                         'cleanSheet%2CpenaltySave%2CsavedShotsFromInsideTheBox%2CrunsOut%2Crating&group=goalkeeper&' \
+                         'accumulation=total&order=-rating&offset=0&limit=100&_=1573607570'
+
 
 
         yield scrapy.http.Request(url=url_attack,
@@ -48,13 +53,17 @@ class sofa_scoure(scrapy.Spider):
                                   method='GET',
                                   callback=self.parse_passing)
 
+        yield scrapy.http.Request(url=url_goalkeeper,
+                                  method='GET',
+                                  callback=self.parse_goalkeeper)
+
 
 
 
 
     def parse_attack(self, response):
 
-
+        #json.loads(response.body_as_unicode())
         for i in range(len(json.loads(response.body_as_unicode())['results'])):
             sofa_scoure.estatistic_data_attack.append({
                 "name": json.loads(response.body_as_unicode())['results'][i]['player']['name'],
@@ -63,7 +72,8 @@ class sofa_scoure(scrapy.Spider):
                 "big_chances_missed": int(json.loads(response.body_as_unicode())['results'][i]['bigChancesMissed']),
                 "success_ful_dribbles": int(json.loads(response.body_as_unicode())['results'][i]['successfulDribbles']),
                 "total_shots": int(json.loads(response.body_as_unicode())['results'][i]['totalShots']),
-                "goal_conversion_percentage": float(json.loads(response.body_as_unicode())['results'][i]['goalConversionPercentage'])
+                "goal_conversion_percentage": float(json.loads(response.body_as_unicode())['results'][i]['goalConversionPercentage']),
+                "rating": float(json.loads(response.body_as_unicode())['results'][i]['rating'])
 
             })
 
@@ -77,11 +87,14 @@ class sofa_scoure(scrapy.Spider):
 
         else:
 
-            data_attack = pd.DataFrame(sofa_scoure.estatistic_data_attack)
-            data_deffence = pd.DataFrame(sofa_scoure.estatistic_data_deffence)
-            data_passing = pd.DataFrame(sofa_scoure.estatistic_data_passing)
-            data = pd.concat([data_attack, data_deffence, data_passing], axis=1)
-            #db.statistic_players.insert_many(data)
+            data = defaultdict(dict)
+            for l in (sofa_scoure.estatistic_data_attack, sofa_scoure.estatistic_data_deffence, sofa_scoure.estatistic_data_passing, sofa_scoure.estatistic_data_goalkeeper):
+                for elem in l:
+                    data[elem['name'], elem['team'], elem['rating']].update(elem)
+
+
+            #db.statistic_players.insert_many(data.values())
+
 
 
 
@@ -94,11 +107,14 @@ class sofa_scoure(scrapy.Spider):
 
         for i in range(len(json.loads(response.body_as_unicode())['results'])):
             sofa_scoure.estatistic_data_deffence.append({
+                "name": json.loads(response.body_as_unicode())['results'][i]['player']['name'],
+                "team": json.loads(response.body_as_unicode())['results'][i]['team']['slug'],
                 "tackles": int(json.loads(response.body_as_unicode())['results'][i]['tackles']),
                 "interceptions": int(json.loads(response.body_as_unicode())['results'][i]['interceptions']),
                 "clearances": int(json.loads(response.body_as_unicode())['results'][i]['clearances']),
                 "error_lead_to_goal": int(json.loads(response.body_as_unicode())['results'][i]['errorLeadToGoal']),
-                "blocked_shots": int(json.loads(response.body_as_unicode())['results'][i]['blockedShots'])
+                "blocked_shots": int(json.loads(response.body_as_unicode())['results'][i]['blockedShots']),
+                "rating": float(json.loads(response.body_as_unicode())['results'][i]['rating'])
 
             })
 
@@ -124,6 +140,8 @@ class sofa_scoure(scrapy.Spider):
 
         for i in range(len(json.loads(response.body_as_unicode())['results'])):
             sofa_scoure.estatistic_data_passing.append({
+                "name": json.loads(response.body_as_unicode())['results'][i]['player']['name'],
+                "team": json.loads(response.body_as_unicode())['results'][i]['team']['slug'],
                 "bigChancesCreated": int(json.loads(response.body_as_unicode())['results'][i]['bigChancesCreated']),
                 "assists": int(json.loads(response.body_as_unicode())['results'][i]['assists']),
                 "accuratePasses": int(json.loads(response.body_as_unicode())['results'][i]['accuratePasses']),
@@ -145,6 +163,25 @@ class sofa_scoure(scrapy.Spider):
             sofa_scoure.num3 += 1
             print(sofa_scoure.num3)
             yield response.follow(next_page3, callback=self.parse_passing)
+
+
+
+    def parse_goalkeeper(self, response):
+
+
+        for i in range(len(json.loads(response.body_as_unicode())['results'])):
+            sofa_scoure.estatistic_data_goalkeeper.append({
+                "name": json.loads(response.body_as_unicode())['results'][i]['player']['name'],
+                "team": json.loads(response.body_as_unicode())['results'][i]['team']['slug'],
+                "saves": int(json.loads(response.body_as_unicode())['results'][i]['saves']),
+                "penalty_save": int(json.loads(response.body_as_unicode())['results'][i]['penaltySave']),
+                "saved_shots_from_inside_the_box": int(json.loads(response.body_as_unicode())['results'][i]['savedShotsFromInsideTheBox']),
+                "runs_out": int(json.loads(response.body_as_unicode())['results'][i]['runsOut']),
+                "rating": float(json.loads(response.body_as_unicode())['results'][i]['rating'])
+
+            })
+
+
 
 
 
