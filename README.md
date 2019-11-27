@@ -1,5 +1,5 @@
 # Futebol
-[![Python](https://img.shields.io/badge/python-3.7-blue.svg)]() [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat)](/LICENSE)[![Travis-CI](https://api.travis-ci.com/duanribeiro/futebol_client.svg?token=BzJFp8x15XHWp7qszhFF&branch=master)]
+[![Python](https://img.shields.io/badge/python-3.7-blue.svg)]() [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat)](/LICENSE)![Travis-CI](https://api.travis-ci.com/duanribeiro/futebol_client.svg?token=BzJFp8x15XHWp7qszhFF&branch=master)
 
 The main objective of this project is to use technology and data science in the Brazilian Football Championship. You can check the online [LIVE EXAMPLE](http://35.226.24.80/Intro) and the current work on [Trello](https://trello.com/b/hIgiJDFl/futebol).
 
