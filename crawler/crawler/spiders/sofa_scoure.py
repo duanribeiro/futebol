@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import json
-#import pandas as pd
+import pandas as pd
+from datetime import  date
 from collections import defaultdict
-#from mongo_connection import db
+from mongo_connection import db
 
 
 
@@ -11,9 +12,13 @@ from collections import defaultdict
 
 class sofa_scoure(scrapy.Spider):
     name = 'sofa_scoure'
-    num = 1
-    num2 = 1
-    num3 = 1
+
+    #page number
+    pag_num_attack = 1
+    pag_num_deffence = 1
+    pag_num_passing = 1
+
+
     estatistic_data_attack = []
     estatistic_data_deffence = []
     estatistic_data_passing = []
@@ -63,7 +68,7 @@ class sofa_scoure(scrapy.Spider):
 
     def parse_attack(self, response):
 
-        #json.loads(response.body_as_unicode())
+
         for i in range(len(json.loads(response.body_as_unicode())['results'])):
             sofa_scoure.estatistic_data_attack.append({
                 "name": json.loads(response.body_as_unicode())['results'][i]['player']['name'],
@@ -73,16 +78,16 @@ class sofa_scoure(scrapy.Spider):
                 "success_ful_dribbles": int(json.loads(response.body_as_unicode())['results'][i]['successfulDribbles']),
                 "total_shots": int(json.loads(response.body_as_unicode())['results'][i]['totalShots']),
                 "goal_conversion_percentage": float(json.loads(response.body_as_unicode())['results'][i]['goalConversionPercentage']),
-                "rating": float(json.loads(response.body_as_unicode())['results'][i]['rating'])
-
+                "rating": float(json.loads(response.body_as_unicode())['results'][i]['rating']),
+                "Date_att": str(date.today())
             })
 
         next_page = 'https://www.sofascore.com/api/v1/unique-tournament/325/season/22931/statistics?fields=goals%2C' \
                      'bigChancesMissed%2CsuccessfulDribbles%2CtotalShots%2CgoalConversionPercentage%2Crating&group=attack&' \
-                     'accumulation=total&order=-rating&offset=' + str(sofa_scoure.num * 100) + '&limit=100&_=1573312147'
-        if sofa_scoure.num < 8:
+                     'accumulation=total&order=-rating&offset=' + str(sofa_scoure.pag_num_attack * 100) + '&limit=100&_=1573312147'
 
-            sofa_scoure.num += 1
+        if sofa_scoure.pag_num_attack < 8:
+            sofa_scoure.pag_num_attack += 1
             yield response.follow(next_page, callback=self.parse_attack)
 
         else:
@@ -93,11 +98,7 @@ class sofa_scoure(scrapy.Spider):
                     data[elem['name'], elem['team'], elem['rating']].update(elem)
 
 
-            #db.statistic_players.insert_many(data.values())
-
-
-
-
+            db.sofa_score_data.insert_many(data.values())
 
 
 
@@ -121,15 +122,14 @@ class sofa_scoure(scrapy.Spider):
 
 
 
-        next_page2 = 'https://www.sofascore.com/api/v1/unique-tournament/325/season/22931/statistics?fields=tackles%2C' \
+        next_page_deff = 'https://www.sofascore.com/api/v1/unique-tournament/325/season/22931/statistics?fields=tackles%2C' \
                      'interceptions%2Cclearances%2CerrorLeadToGoal%2CblockedShots%2Crating&group=defence&accumulation=total&' \
-                     'order=-rating&offset=' + str(sofa_scoure.num2 * 100) + '&limit=100&_=1573522360'
+                     'order=-rating&offset=' + str(sofa_scoure.pag_num_deffence * 100) + '&limit=100&_=1573522360'
 
-        if sofa_scoure.num2 < 8:
+        if sofa_scoure.pag_num_deffence < 8:
 
-            sofa_scoure.num2 += 1
-            print(sofa_scoure.num2)
-            yield response.follow(next_page2, callback=self.parse_deffence)
+            sofa_scoure.pag_num_deffence += 1
+            yield response.follow(next_page_deff, callback=self.parse_deffence)
 
 
 
@@ -154,15 +154,14 @@ class sofa_scoure(scrapy.Spider):
 
 
 
-        next_page3 = 'https://www.sofascore.com/api/v1/unique-tournament/325/season/22931/statistics?fields=bigChancesCreated%2C' \
+        next_page_pass = 'https://www.sofascore.com/api/v1/unique-tournament/325/season/22931/statistics?fields=bigChancesCreated%2C' \
                       'assists%2CaccuratePasses%2CaccuratePassesPercentage%2CkeyPasses%2Crating&group=passing&accumulation=total&' \
-                      'order=-rating&offset=' + str(sofa_scoure.num3 * 100) + '&limit=100&_=1573590527'
+                      'order=-rating&offset=' + str(sofa_scoure.pag_num_passing * 100) + '&limit=100&_=1573590527'
 
-        if sofa_scoure.num3 < 8:
+        if sofa_scoure.pag_num_passing < 8:
 
-            sofa_scoure.num3 += 1
-            print(sofa_scoure.num3)
-            yield response.follow(next_page3, callback=self.parse_passing)
+            sofa_scoure.pag_num_passing += 1
+            yield response.follow(next_page_pass, callback=self.parse_passing)
 
 
 
