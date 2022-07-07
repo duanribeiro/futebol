@@ -17,7 +17,7 @@
     "highcharts-more": "^0.1.7",
     "highcharts-react-official": "^2.2.2",
     "lodash": "^4.17.11",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "nivo": "^0.31.0",
     "pretty-checkbox": "^3.0.3",
     "prism-react-renderer": "^0.1.5",
